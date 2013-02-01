@@ -1,0 +1,271 @@
+/* css stylesheet for index.html */
+/* #003333 */
+/* -webkit is for chrome & safari
+   -moz is firefox
+   -o is opera
+*/
+
+/*styles the header*/
+h1 {
+	font-family: Helvetica, Arial, Times New Roman;
+	background-color: white;
+	text-align: center;
+	color: #0000FF; /*dark bright blue color*/
+	border: 5pt solid black;
+	padding: 30px;
+
+}
+
+/* styles the body of the page*/
+body {
+	font-family: Helvetica, Arial, Times New Roman;
+ 
+}
+
+/* style the links  unvisited*/
+a:link{
+	color: #0000FF; /* dark bright blue color*/
+}
+/* visited link */
+a:visited {
+	color:#0000FF;
+}  
+/* mouse over link */
+a:hover {
+	color:#0000FF;
+	text-decoration: none;
+}  
+
+a:active {
+	color:#0000FF;
+}
+
+/* styles the header for the main feed*/
+#header-feed{
+	text-align: center;
+	font-size: 30px;
+	font-style: italic;
+	color: #0000FF; /* dark bright blue color*/
+	position: relative;
+	top: -7px;
+}
+
+/* Styles the box whih contains the new feeds */
+#main-feed{
+	font-family: Helvetica, Arial, Times New Roman;
+	background-color: white; /* light gray */
+	margin: 5px;
+	padding: 20px;
+	padding-left: 200px;
+	border: 5px solid black;
+	width: 50%;
+	position:fixed;
+	top: 200px;
+	right: 100px;
+	/*background-image:url('img/wall4_@2x.png');*/
+	color: #0000FF; /* dark bright blue color */
+
+}
+
+
+/* styling for the article times */
+.time-stamp{
+	text-align: center;
+	position: fixed;
+	left: 500px;
+}
+
+/* styling for the first articles time */
+#time1{
+	left: 500px;
+	top: 265px;
+}
+
+/* styling for the 2nd articles time */
+#time2{
+	left: 500px;
+	top: 335px;
+}
+
+/* styling for the 3rd articles time */
+#time3{
+	left: 500px;
+	top: 400px;
+}
+
+/* styling for the 4th articles time */
+#time4{
+	left: 500px;
+	top: 475px;
+}
+
+/* styling for the 5th articles time */
+#time5{
+	left: 500px;
+	top: 545px;
+}
+
+
+/* styles the nav panel which contains the rss feeds */
+#feed{
+	background-color: #C0C0C0; /* light gray color*/
+	border: 5px solid black;
+	color: #0000FF; /* dark bright blue */
+}
+
+/* styles the article listing class in the "feed" nav panel*/
+.article{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border:  1px solid white;
+
+}
+
+/* styles the article listing classes hover effect in the "feed nav panel */
+.article:hover{
+	color: #0000FF; /* dark bright blue */
+	background: white; 
+
+}
+
+
+/* styles the next button in the news feed */
+#next{
+	position: absolute;
+	bottom: 10px;
+	right: 21px;
+	background-color: #0000FF; /* dark bright blue */
+	color: white;
+	border-radius: 10px;
+	width: 80px;
+
+}
+
+/* styles the previous button in the news feed */
+#previous{
+	position: relative;
+	top: 10px;
+	background-color: #0000FF; /* dark bright blue */
+	color: white;
+	border-radius: 10px;
+	width: 80px;
+	
+}
+
+#next:hover{
+	background-color: #000099; /* dark blue */
+}
+
+#previous:hover{
+	background-color: #000099; /* dark blue */
+
+}
+/* styles the table hoover class*/
+.table-hoover, th, td{
+	border: 5px solid black;
+	width : 200px;
+	background-color: #C0C0C0; /* light gray color */
+}
+
+
+
+
+/* styles the category table header */
+#table-header {
+	font-size: 25px;
+	font-style: oblique;
+	color: #0000FF; /* dark bright blue color */
+	padding: 10px;
+}
+
+
+
+/*styles the category table  */
+#category {
+	font-family: Helvetica, Arial, Times New Roman;
+	position: fixed;
+	left: 30px;
+	top: 200px;
+	color: #0000FF; /*dark bright blue color*/
+	margin: 15px ;
+	width: 10%;
+	padding: 20px 20px 20px 20px;
+	background-image: url('img/wall4_@2X.png');
+	background-color: white;
+	border: 5px solid black;
+	text-align: center;
+}
+
+/*  styles the search form*/
+#search{
+	position: fixed;
+	right: 10px;
+
+}
+
+/* styles the options dropdown menu */
+#options{
+	position: fixed;
+	left: 10px;
+	
+}
+/* syteles the header image */
+#header-image{
+	position:fixed;
+	left: 650px;
+	top: 20px;
+
+}
+
+/* styles the customzie sources button */
+#custom{
+	position: fixed;
+	left: 80px;
+	background-color: #0000FF; /* dark bright blue */
+	color: white;
+	background: -webkit-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); /*dark bright blue to grayish-blue to light gray*/
+	background: -mox-linear-gradient(top, #0000FF, #0066CC, #C0C0C0); 
+	background: -o-linear-gradient(top, #0000FF, #0066CC, #C0C0C0); 
+	-webkit-box-shadow: -2px -2px 2px rgb(88, 88, 180);    /*(horizontal offset, veritcal offset, optional blur distance, optional spread distance, color) rgb is grayish blue */
+	-moz-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
+	-o-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
+	border-radius: 8px;
+}
+
+/* styles the hover effect for the customization button*/
+#custom:hover{
+	color: #0000FF; /* dark bright blue */
+	background: #E8E8E8; /* light gray */
+	border-top-color: white;
+	border-bottom-color: white;
+	border-left-color: white;
+	border-right-color: white;
+
+}
+
+/* styles the login button */
+#login{
+	position: fixed;
+	left: 10px;
+	background-color:  #0000FF; /* dark bright blue */
+	color: white;
+	background: -webkit-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); /*dark bright blue to light gray*/
+	background: -mox-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
+	background: -o-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
+	-webkit-box-shadow: -2px -2px 2px rgb(88, 88, 180);    /*(horizontal offset, veritcal offset, optional blur distance, optional spread distance, color) rgb is grayish blue */
+	-moz-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
+	-o-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
+	border-radius: 8px;
+
+}
+
+#login:hover{
+	color: #0000FF; /* dark bright blue */;
+	background: #E8E8E8; /* light gray */
+	border-top-color: white;
+	border-bottom-color: white;
+	border-left-color: white;
+	border-right-color: white;
+
+}
+
