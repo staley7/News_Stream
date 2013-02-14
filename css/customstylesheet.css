@@ -83,6 +83,7 @@ body {
 
 
 }
+
 #home:hover{
 	color: white;
 	background: #0000FF; /* dark bright blue */
@@ -92,22 +93,46 @@ body {
 	border-right-color: white;
 
 }
+	
+/* positoning for toggle buttons */	
+#toggle-one{
+	position: relative;
+	left: 50px;
+}
+#toggle-two{
+	position: fixed;
+	left: 650px;
+}
+#toggle-three{
+	position: fixed;
+	left: 750px;
+}
+#toggle-four{
+	position: fixed;
+	left: 850px;
+}
+#toggle-five{
+	position: relative;
+	left: 800px;
+}
+#toggle-six{
+	position: relative;
+	left: 50px;
+}
+#toggle-seven{
+	position: relative;
+	left: 50px;
+}
+#toggle-eight{
+	position: relative;
+	left: 50px;
+}
+#toggle-nine{
+	position: relative;
+	left: 50px;
+}
+#toggle-ten{
+	position: relative;
+	left: 50px;
+}
 
-/* test for toggle buttons */
-a {
-    background: #ccc;
-    cursor: pointer;
-    border-top: solid 2px #eaeaea;
-    border-left: solid 2px #eaeaea;
-    border-bottom: solid 2px #777;
-    border-right: solid 2px #777;
-    padding: 5px 5px;   	
-    }
-
-a.down {
-    background: #bbb;
-    border-top: solid 2px #777;
-    border-left: solid 2px #777;
-    border-bottom:solid 2px  #eaeaea;
-    border-right: solid 2px #eaeaea;
-    }
