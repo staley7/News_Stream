@@ -101,38 +101,38 @@ body {
 }
 #toggle-two{
 	position: fixed;
-	left: 650px;
+	left: 625px;
 }
 #toggle-three{
 	position: fixed;
-	left: 750px;
+	left: 757px;
 }
 #toggle-four{
 	position: fixed;
-	left: 850px;
+	left: 888px;
 }
 #toggle-five{
-	position: relative;
-	left: 800px;
+	position: fixed;
+	left: 1020px;
 }
 #toggle-six{
 	position: relative;
 	left: 50px;
 }
 #toggle-seven{
-	position: relative;
-	left: 50px;
+	position: fixed;
+	left: 625px;
 }
 #toggle-eight{
-	position: relative;
-	left: 50px;
+	position: fixed;
+	left: 757px;
 }
 #toggle-nine{
-	position: relative;
-	left: 50px;
+	position: fixed;
+	left: 888px;
 }
 #toggle-ten{
-	position: relative;
-	left: 50px;
+	position: fixed;
+	left: 1020px;
 }
 
