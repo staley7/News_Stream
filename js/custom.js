@@ -2,8 +2,11 @@
 
 
 
-function(){
-	document.getElementById("source1").toggleClass("down");
+function setToggle(){
+		alert('hello');
+		var list = document.getElementsByClassName('btn btn-primary');
+		for(var i = 0; i < list.length; i++)
+		$(list[i].button('toggle');
 }
 
 /*$(document).ready(function(){

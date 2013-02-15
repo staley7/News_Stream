@@ -136,3 +136,13 @@ body {
 	left: 1020px;
 }
 
+/* help button  */
+#help-button{
+	position: fixed;
+	width: 200px;
+	left: 100px;
+	top: 400px;
+	background: white;
+	border: 5px solid black;
+
+}
