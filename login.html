@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--index html main page for the website interface -->
+<!--login.html page whichs allows the user to login through facebook -->
 <html>
   <head>
   <!--  bootstrap css links -->
@@ -19,18 +19,30 @@
   <h1></h1> 
   
   <body>
+	<!-- links to used scripts -->
     <script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/custom.js"></script>
 	<body background = "img/debut_dark_@2X.png">
 
+
+	<!-- box which hold the login forms and button -->
+	<div id ="login-box">
+		<!-- form for logining on -->
+		<form id = "login-form">
+			User name: <input type = "text" name = "username"><br>
+			Password:  <input type = "password" name = "pwd">
+		</form>
+		
+		<button type = "button" button id = "login"> Login </button>
 	
+	</div>
 	
 	
 	<!-- customize button -->
-	<button type ="button" button id = "custom" > Customize Sources</button>
+	<button type ="button" button id = "custom"  onclick = "custom.html"> Customize Sources</button>
 	<!-- login button -->
-	<button type = "button" button id = "login"> Login </button>
+	<button type = "button" button id = "home"> home </button>
 	
 	<!-- image used in the header -->
 	<div id = "header-image">

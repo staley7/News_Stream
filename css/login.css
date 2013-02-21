@@ -1,4 +1,4 @@
-/* css stylesheet for index.html */
+/* css stylesheet for login.html */
 /* #003333 */
 /* -webkit is for chrome & safari
    -moz is firefox
@@ -22,129 +22,31 @@ body {
  
 }
 
-/* style the links  unvisited*/
-a:link{
-	color: #0000FF; /* dark bright blue color*/
-}
-/* visited link */
-a:visited {
-	color:#0000FF;
-}  
-/* mouse over link */
-a:hover {
-	color:#0000FF;
-	text-decoration: none;
-}  
-
-a:active {
-	color:#0000FF;
-}
-
-/* styles the header for the main feed*/
-#header-feed{
-	text-align: center;
-	font-size: 30px;
-	font-style: italic;
-	color: #0000FF; /* dark bright blue color*/
-	position: relative;
-	top: -7px;
-}
-
-/* Styles the box whih contains the new feeds */
-#main-feed{
+/* Styles the box whih contains the input forms for login in */
+#login-box{
 	font-family: Helvetica, Arial, Times New Roman;
 	background-color: white; /* light gray */
 	margin: 5px;
 	padding: 20px;
 	padding-left: 200px;
 	border: 5px solid black;
-	width: 50%;
+	width: 30%;
 	position:fixed;
 	top: 200px;
-	right: 100px;
-	/*background-image:url('img/wall4_@2x.png');*/
+	right: 400px;
 	color: #0000FF; /* dark bright blue color */
 
 }
-
-
-/* styling for the article times */
-.time-stamp{
-	text-align: center;
-	position: fixed;
-	left: 500px;
+/*styles the login form box */
+#login-form{
+	color: black;
 }
 
-/* styling for the first articles time */
-#time1{
-	left: 500px;
-	top: 265px;
-}
-
-/* styling for the 2nd articles time */
-#time2{
-	left: 500px;
-	top: 335px;
-}
-
-/* styling for the 3rd articles time */
-#time3{
-	left: 500px;
-	top: 400px;
-}
-
-/* styling for the 4th articles time */
-#time4{
-	left: 500px;
-	top: 475px;
-}
-
-/* styling for the 5th articles time */
-#time5{
-	left: 500px;
-	top: 545px;
-}
-
-
-/* styles the nav panel which contains the rss feeds */
-#feed{
-	background-color: #C0C0C0; /* light gray color*/
-	border: 5px solid black;
-	color: #0000FF; /* dark bright blue */
-}
-
-/* styles the article listing class in the "feed" nav panel*/
-.article{
-	padding-top: 15px;
-	padding-bottom: 15px;
-	border:  1px solid white;
-
-}
-
-/* styles the article listing classes hover effect in the "feed nav panel */
-.article:hover{
-	color: #0000FF; /* dark bright blue */
-	background: white; 
-
-}
-
-
-/* styles the next button in the news feed */
-#next{
+/* styles the login button in the login-box */
+#login{
 	position: absolute;
 	bottom: 10px;
-	right: 21px;
-	background-color: #0000FF; /* dark bright blue */
-	color: white;
-	border-radius: 10px;
-	width: 80px;
-
-}
-
-/* styles the previous button in the news feed */
-#previous{
-	position: relative;
-	top: 10px;
+	right: 60px;
 	background-color: #0000FF; /* dark bright blue */
 	color: white;
 	border-radius: 10px;
@@ -152,62 +54,9 @@ a:active {
 	
 }
 
-#next:hover{
+/* styles the login button's hoover effect */
+#login:hover{
 	background-color: #000099; /* dark blue */
-}
-
-#previous:hover{
-	background-color: #000099; /* dark blue */
-
-}
-/* styles the table hoover class*/
-.table-hoover, th, td{
-	border: 5px solid black;
-	width : 200px;
-	background-color: #C0C0C0; /* light gray color */
-}
-
-
-
-
-/* styles the category table header */
-#table-header {
-	font-size: 25px;
-	font-style: oblique;
-	color: #0000FF; /* dark bright blue color */
-	padding: 10px;
-}
-
-
-
-/*styles the category table  */
-#category {
-	font-family: Helvetica, Arial, Times New Roman;
-	position: fixed;
-	left: 30px;
-	top: 200px;
-	color: #0000FF; /*dark bright blue color*/
-	margin: 15px ;
-	width: 10%;
-	padding: 20px 20px 20px 20px;
-	background-image: url('img/wall4_@2X.png');
-	background-color: white;
-	border: 5px solid black;
-	text-align: center;
-}
-
-/*  styles the search form*/
-#search{
-	position: fixed;
-	right: 10px;
-
-}
-
-/* styles the options dropdown menu */
-#options{
-	position: fixed;
-	left: 10px;
-	
 }
 /* syteles the header image */
 #header-image{
@@ -243,8 +92,8 @@ a:active {
 
 }
 
-/* styles the login button */
-#login{
+/* styles the home button */
+#home{
 	position: fixed;
 	left: 10px;
 	background-color:  #0000FF; /* dark bright blue */
@@ -259,7 +108,8 @@ a:active {
 
 }
 
-#login:hover{
+/* sytles the hover effect for the home button */
+#home:hover{
 	color: #0000FF; /* dark bright blue */;
 	background: #E8E8E8; /* light gray */
 	border-top-color: white;

@@ -55,18 +55,21 @@ body {
 
 }
 
+/* styles the remove button hoover effect */
 #remove-button:hover{
 	color:white;
 	background-color: #800000; /* dark red */
 	
 }
 
+/* styles the header image */
 #header-image{
 	position:fixed;
 	left: 650px;
 	top: 20px;
 }
 
+/*styles the home button */
 #home{
 	position: fixed;
 	left: 10px;
@@ -84,6 +87,7 @@ body {
 
 }
 
+/* styles the home button's hoover effect */
 #home:hover{
 	color: white;
 	background: #0000FF; /* dark bright blue */
@@ -94,7 +98,7 @@ body {
 
 }
 	
-/* positoning for toggle buttons */	
+/* styles the positoning for toggle buttons */	
 #toggle-one{
 	position: relative;
 	left: 50px;
@@ -136,7 +140,7 @@ body {
 	left: 1020px;
 }
 
-/* help button  */
+/* styles the help button  */
 #help-button{
 	position: fixed;
 	width: 200px;
