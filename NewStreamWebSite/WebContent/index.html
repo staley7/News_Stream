@@ -9,7 +9,7 @@
   <LINK href="css/bootstrap-responsive.css" REL="stylesheet" TYPE="text/css" media="screen">
   
   
-  <!-- my stylesheets links -->
+  <!-- my style sheets links -->
   <LINK REL=StyleSheet HREF="css/stylesheet.css" TYPE="text/css" MEDIA=screen>
    
    <title>News Stream</title>
@@ -29,10 +29,6 @@
             {
                 alert("DB");
                 var xmlhttp;
-                if (str == "") {
-                    document.getElementById("db").innerHTML = "";
-                    return;
-                }
                 if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
                 }
@@ -45,7 +41,7 @@
                         document.getElementById("db").innerHTML = xmlhttp.responseText;
                     }
                 }
-                xmlhttp.open("GET", "connectDb.asp", true);
+                xmlhttp.open("GET", "connectJSP.jsp", true);
                 xmlhttp.send();
             }
         }
