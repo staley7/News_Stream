@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/53/src/testing
+END
+TestMain.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/53/src/testing/TestMain.java
+END
+ArticleTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/49/src/testing/ArticleTest.java
+END
+BBCParserTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/49/src/testing/BBCParserTest.java
+END
+DateScorerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/48/src/testing/DateScorerTest.java
+END
+KeywordScorerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/50/src/testing/KeywordScorerTest.java
+END
+SourceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/36/src/testing/SourceTest.java
+END
+FuzzyStringEqualizerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/44/src/testing/FuzzyStringEqualizerTest.java
+END

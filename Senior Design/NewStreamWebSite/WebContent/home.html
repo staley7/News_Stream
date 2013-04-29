@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--index html main page for the website interface -->
+<html>
+  <head>
+  <!--  bootstrap css links -->
+  <LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css" media="screen">
+  <LINK href="css/bootstrap-responsive.min.css" REL="stylesheet" TYPE="text/css" media="screen">
+  <LINK href="css/bootstrap.css" REL="stylesheet" TYPE="text/css" media="screen">
+  <LINK href="css/bootstrap-responsive.css" REL="stylesheet" TYPE="text/css" media="screen">
+  
+  
+  <!-- my style sheets links -->
+  <LINK REL=StyleSheet HREF="css/stylesheet.css" TYPE="text/css" MEDIA=screen>
+   
+   <title>News Stream</title>
+  </head>
+  
+  <!--News Stream header -->
+  <h1>News Stream</h1> 
+  
+  <body>
+    <script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	
+    <script type="text/javascript">
+        function retrieveArticleURL() {
+        		var xmlhttp;
+                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("url").innerHTML = xmlhttp.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "retrieveArticleUrl.jsp", true);
+                xmlhttp.send();
+        
+        }
+       
+        
+        function retrieveStory(){
+       	var xmlhttp;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("title-1").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "retrieveStory.jsp", true);
+            xmlhttp.send();
+       }  
+        window.onload = retrieveStory;
+        window.onload = retrieveArticleURL;    
+        
+    </script>
+
+	
+		
+			<div id = "story-1"  class = "article">
+				<p id = title-1></p>
+				<br></br>
+				<a href="#" id="url"></a>
+			</div>
+  
+	
+	
+
+
+
+  </body>
+</html>

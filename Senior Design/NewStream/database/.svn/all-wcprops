@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/62/src/database
+END
+SQLDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/62/src/database/SQLDatabase.java
+END
+Story.java
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/53/src/database/Story.java
+END
+FirstCon.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/54/src/database/FirstCon.java
+END
+FakeDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/59/src/database/FakeDatabase.java
+END
+StoryID.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/59/src/database/StoryID.java
+END
+localArticleTable.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/59/src/database/localArticleTable.txt
+END
+localStoryTable.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/59/src/database/localStoryTable.txt
+END
+ArticleID.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/34/src/database/ArticleID.java
+END
+Article.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/56/src/database/Article.java
+END

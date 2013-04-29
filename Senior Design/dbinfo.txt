@@ -1,0 +1,4 @@
+database host:jdbc:mysql://streamsdatabase.ece.iastate.edu/
+database name: mydb
+username: root
+password: ""

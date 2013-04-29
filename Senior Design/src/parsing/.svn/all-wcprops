@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/59/src/parsing
+END
+CNNParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/59/src/parsing/CNNParser.java
+END
+SourceParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/48/src/parsing/SourceParser.java
+END
+IPageParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/48/src/parsing/IPageParser.java
+END
+RSSMonitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/59/src/parsing/RSSMonitor.java
+END
+TheGuardianParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/59/src/parsing/TheGuardianParser.java
+END
+DateConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/28/src/parsing/DateConverter.java
+END
+DateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/27/src/parsing/DateException.java
+END
+NYTimesParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/59/src/parsing/NYTimesParser.java
+END
+BBCParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/59/src/parsing/BBCParser.java
+END

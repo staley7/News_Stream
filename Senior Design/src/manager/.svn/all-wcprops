@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 28
+/svn/!svn/ver/62/src/manager
+END
+TestingPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/58/src/manager/TestingPreferences.java
+END
+Manager.java
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/62/src/manager/Manager.java
+END
+XMLPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/58/src/manager/XMLPreferences.java
+END
+FileLogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/54/src/manager/FileLogger.java
+END
+IDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/56/src/manager/IDatabase.java
+END
+ILogger.java
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/29/src/manager/ILogger.java
+END
+IPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/58/src/manager/IPreferences.java
+END
+preferences.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/58/src/manager/preferences.xml
+END

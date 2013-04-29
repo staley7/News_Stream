@@ -1,0 +1,20 @@
+<preferences>
+	<edit_distance_coe>.99</edit_distance_coe>
+	<longest_common_subsequence_coe>.01</longest_common_subsequence_coe>
+	<error_log_location>c:\\Users\\Jamison\\Documents\\SeniorDesign\\log.txt</error_log_location>
+	<database_host>jdbc:mysql://streamsdatabase.ece.iastate.edu/mydb</database_host>
+	<database_username>root</database_username>
+	<database_password></database_password>
+	<maximum_date_match>7</maximum_date_match>
+	<time_between_rss_checks_ms>60000</time_between_rss_checks_ms>
+	<threshold_score_for_match>120</threshold_score_for_match>
+	<date_scorer_coe>1</date_scorer_coe>
+	<quotations_scorer_coe>.5</quotations_scorer_coe>
+	<keyword_scorer_coe>1.2</keyword_scorer_coe>
+	<rss_feeds>http://www.guardian.co.uk/world/rss
+http://www.guardian.co.uk/technology/rss
+http://feeds.bbci.co.uk/news/world/rss.xml
+http://feeds.bbci.co.uk/news/technology/rss.xml
+http://rss.cnn.com/rss/cnn_world.rss
+http://rss.cnn.com/rss/cnn_tech.rss</rss_feeds>
+</preferences>

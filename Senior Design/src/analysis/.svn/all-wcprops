@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/59/src/analysis
+END
+KeywordFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/49/src/analysis/KeywordFilter.java
+END
+QuotationsTrainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/58/src/analysis/QuotationsTrainer.java
+END
+KeywordScorer.java
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/50/src/analysis/KeywordScorer.java
+END
+IScorer.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/48/src/analysis/IScorer.java
+END
+QuotationsScorer.java
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/59/src/analysis/QuotationsScorer.java
+END
+DateScorer.java
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/54/src/analysis/DateScorer.java
+END
+ArticleTrainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/58/src/analysis/ArticleTrainer.java
+END
+FuzzyStringEqualizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/48/src/analysis/FuzzyStringEqualizer.java
+END
+ArticleAggregator.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/59/src/analysis/ArticleAggregator.java
+END
+CommonWords.txt
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/47/src/analysis/CommonWords.txt
+END

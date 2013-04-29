@@ -1,0 +1,15 @@
+notes contact meeting 2-18-2013
+
+javaoperator1.xml  - section in there toward top
+				librairy dependieces add path for libraries path, it will get the path from their.
+
+database call - jdbc use own code, their example odbc they have examples in their.
+
+monitoring rss feeds- streams operator: inetsource - will send an example, gvie url or feed and can tell it to monitor for certain seconds or minutes, can pass in list of url, can tell it to do incrementally change
+				- one operator call with fixed list probably
+
+can send him message if we want him to look at any code
+
+files to img. win stp program which should be able to do. google search on win stp - should have key capabilites
+
+

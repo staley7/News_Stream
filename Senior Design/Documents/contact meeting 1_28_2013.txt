@@ -1,0 +1,7 @@
+1-28-2013
+Senior Design Contact meeting
+
+database should be able to access onto cloud. if not we will be able to put on iowa state 
+server name
+password 
+port
