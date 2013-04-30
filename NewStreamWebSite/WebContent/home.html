@@ -1,64 +1,232 @@
 <!DOCTYPE html>
 <!--index html main page for the website interface -->
 <html>
-  <head>
-  <!--  bootstrap css links -->
-  <LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css" media="screen">
-  <LINK href="css/bootstrap-responsive.min.css" REL="stylesheet" TYPE="text/css" media="screen">
-  <LINK href="css/bootstrap.css" REL="stylesheet" TYPE="text/css" media="screen">
-  <LINK href="css/bootstrap-responsive.css" REL="stylesheet" TYPE="text/css" media="screen">
-  
-  
-  <!-- my style sheets links -->
-  <LINK REL=StyleSheet HREF="css/stylesheet.css" TYPE="text/css" MEDIA=screen>
-   
-   <title>News Stream</title>
-  </head>
-  
-  <!--News Stream header -->
-  <h1></h1> 
-  
-  <body>
-    <script src="js/jquery-1.8.3.min.js"></script>
+<head>
+<!--  bootstrap css links -->
+<LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+<LINK href="css/bootstrap-responsive.min.css" REL="stylesheet"
+	TYPE="text/css" media="screen">
+<LINK href="css/bootstrap.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+<LINK href="css/bootstrap-responsive.css" REL="stylesheet"
+	TYPE="text/css" media="screen">
+<LINK href="css/homestyle.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+
+
+
+
+<title>News Stream</title>
+</head>
+
+<!--News Stream header -->
+<h1>News Stream</h1>
+
+<body>
+	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	
-    <script type="text/javascript">
-        function connectDB() {
-            
-                alert("DB");
-                var xmlhttp;
-                if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp = new XMLHttpRequest();
-                }
-                else {// code for IE6, IE5
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange = function () {
-                    alert("here");
-                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        document.getElementById("url").innerHTML = xmlhttp.responseText;
-                    }
-                }
-                xmlhttp.open("GET", "connectJSP.jsp", true);
-                xmlhttp.send();
-       
-        
-        }
-            
-        window.onload = connectDB;    
-        
-    </script>
 
+	<script type="text/javascript">
 	
+	var count = 5;
+		function retrieveArticleURL() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("url").innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "retrieveArticleUrl.jsp", true);
+			xmlhttp.send();
+
+		}
+
+		function retrieveStory() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("title-1").innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "retrieveStory.jsp", true);
+			xmlhttp.send();
+		}
+
 		
-			<div id = "article-1"  class = "article">
-				<a href="#" id="url"></a>
-			</div>
-  
-	
-	
+		function retrieveStoryTitlebyID(id) {
+			var xmlhttp;
+			var Story_ID = id;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("title-"+id).innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "retrieveStoryTitlebyID.jsp?Story_ID= "
+					+ Story_ID, true);
+			xmlhttp.send();
+		}
+		
+		
+		function retrieveArticleURLbyID(id) {
+			var xmlhttp;
+			var Story_ID = id;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("url" + id).innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "retrieveArticleUrlbyID.jsp?Story_ID= "
+					+ Story_ID, true);
+			xmlhttp.send();
+
+		}
+		
+		//popolutes the story url on next click
+		function retArticleURLbyID(counter, id ) {
+			var xmlhttp;
+			alert("ARtice")
+			var Story_ID = counter;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					alert("here");
+					document.getElementById("url" + id).innerHTML = xmlhttp.responseText;
+				}
+			}
+			alert("end art");
+			xmlhttp.open("GET", "retrieveArticleUrlbyID.jsp?Story_ID= "
+					+ Story_ID, true);
+			xmlhttp.send();
+
+		}
+		
+		function retStoryTitlebyID(counter, id) {
+			var xmlhttp;
+			alert("story Title");
+			var Story_ID = counter;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("title-"+id).innerHTML = xmlhttp.responseText;
+				}
+			}
+			alert("end Story Title");
+			xmlhttp.open("GET", "retrieveStoryTitlebyID.jsp?Story_ID= "
+					+ Story_ID, true);
+			xmlhttp.send();
+		}
+		
+		
+		//calls the function to populate main feed on next button
+		function next(){
+			count=count+5;
+			//retStoryTitlebyID(count-4, 1);
+			retArticleURLbyID(count-4, 1);
+// 			retStoryTitlebyID(count-3, 2);
+// 			retArticleURLbyID(count-3, 2);
+//  			retStoryTitlebyID(count-2, 2);
+// 			retArticleURLbyID(count-2, 3);
+//  			retStoryTitlebyID(count-1, 4);
+// 			retArticleURLbyID(count-1, 4);
+// 			retStoryTitlebyID(count, 5);
+// 			retArticleURLbyID(count, 5);
+		}
+		
+		
+		
+		function startOnLoad() {
+			retrieveArticleURL();
+			retrieveStory();
+ 			retrieveStoryTitlebyID(2);
+			retrieveArticleURLbyID(2);
+ 			retrieveStoryTitlebyID(3);
+			retrieveArticleURLbyID(3);
+ 			retrieveStoryTitlebyID(4);
+			retrieveArticleURLbyID(4);
+			retrieveStoryTitlebyID(5);
+			retrieveArticleURLbyID(5);
+
+		}
+		window.onload = startOnLoad;
+	</script>
 
 
+	<div id="mainfeed" class="tts-form">
+		<div id="story-1" class="story">
+			<p id=title-1></p>
+			<br></br>
+			<div id="url"></div>
 
-  </body>
+		</div>
+		<div id="story-2" class="story">
+			<p id=title-2></p>
+			<br></br>
+			<div id="url2"></div>
+		</div>
+		<div id="story-3" class="story">
+			<p id=title-3></p>
+			<br></br>
+			<div id="url3"></div>
+		</div>
+		<div id="story-4" class="story">
+			<p id=title-4></p>
+			<br></br>
+			<div id="url4"></div>
+		</div>
+		<div id="story-5" class="story">
+			<p id=title-5></p>
+			<br></br>
+			<div id="url5"></div>
+		</div>
+		<button id = "previous" class="btn btn-primary">Previous</button>
+		<button id = "next" class="btn btn-primary" onclick="next()">Next</button>
+	</div>
+
+
+	<!--category table and box -->
+	<div id="category">
+		<div id="table-header">Categories</div>
+		<table id="table1" table class="table-hover">
+			<tr>
+				<td>Recent News</td>
+			</tr>
+			<tr>
+				<td>World News</td>
+			</tr>
+			<tr>
+				<td>Technology</td>
+			</tr>
+
+		</table>
+	</div>
+</body>
 </html>
