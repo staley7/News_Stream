@@ -4,10 +4,9 @@
 <%@ page import="java.io.*"  %> 
 
 <%
-//@author Lance Staley
 String connectionURL = "jdbc:mysql://streamsdatabase.ece.iastate.edu/mydb?user=root;password=";
 Connection connection = null;
-Statement statement = null;
+PreparedStatement statement = null;
 ResultSet rs = null;
 %>
 
@@ -18,11 +17,11 @@ ResultSet rs = null;
 <%
 Class.forName("com.mysql.jdbc.Driver");
 connection = DriverManager.getConnection(connectionURL, "root", "");
-statement = connection.createStatement();
-rs = statement.executeQuery("SELECT title FROM story WHERE Story_ID =2");
+statement = connection.prepareStatement("SELECT Story_ID FROM story ORDER BY Story_ID DESC LIMIT 1");
+rs = statement.executeQuery();
 
 while (rs.next()) {
-out.println(rs.getString("title")+"<br>");
+out.println(rs.getInt("Story_ID") +"<br>");
 }
 
 rs.close();

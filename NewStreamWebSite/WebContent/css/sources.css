@@ -1,0 +1,121 @@
+/* css stylesheet for sources.html */
+
+/*styles the header*/
+h1 {
+	font-family: Helvetica, Arial, Times New Roman;
+	background-color: white;
+	text-align: center;
+	color: black; 
+	border: 3pt groove black;
+	padding: 30px;
+
+}
+
+/* styling the body */
+body {
+	font-family: Helvetica, Arial, Times New Roman;
+	background-color: white; 
+
+
+}
+
+/* /* styling for the remove box */ */
+/* #remove-box { */
+/* 	font-family: Helvetica, Arial, Times New Roman; */
+/* 	background-color: white; light grayish brown */
+/* 	margin: 5px; */
+/* 	padding: 20px; */
+/* 	border: 5px solid black; */
+/* 	position: fixed; */
+/* 	top: 200px; */
+/* 	left: 400px; */
+/* 	width: 50%; */
+	
+	
+/* } */
+
+/* styling the source group of buttons in the remove box */
+#inside-remove-box{
+	background-color: #C0C0C0; /*light gray color*/
+	border: 4px solid black;
+	padding: 10px;
+
+}
+
+#sources{
+	position: relateive;
+	top: 10px;
+	left: 40%;
+	padding-left: 600px;
+	padding: 10px;
+	
+}
+
+
+/* styles the remove slected button in the remove-box*/
+#remove-button{
+	padding: 4px;
+	position: relative;
+	top: 10px;
+	left: 40%;
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	/*border: 1px solid black;*/
+
+
+}
+
+#remove-button:hover{
+	color:white;
+	background-color: #800000; /* dark red */
+	
+}
+
+#header-image{
+	position:fixed;
+	left: 650px;
+	top: 20px;
+}
+
+#home{
+	position: fixed;
+	left: 10px;
+	background-color:  #0000FF; /* dark bright blue */
+	color: white;
+	background: -webkit-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); /*dark bright blue to light gray*/
+	background: -mox-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
+	background: -o-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
+	-webkit-box-shadow: -2px -2px 2px rgb(88, 88, 180);    /*(horizontal offset, veritcal offset, optional blur distance, optional spread distance, color) rgb is grayish blue */
+	-moz-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
+	-o-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
+	border-radius: 8px;
+
+
+
+}
+#home:hover{
+	color: white;
+	background: #0000FF; /* dark bright blue */
+	border-top-color: white;
+	border-bottom-color: white;
+	border-left-color: white;
+	border-right-color: white;
+
+}
+
+
+.tts-form {
+	max-width: 500px;
+	padding: 19px 29px 29px;
+	margin: 0 auto 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+

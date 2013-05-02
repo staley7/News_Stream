@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<!--  bootstrap css links -->
+<LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+<LINK href="css/bootstrap-responsive.min.css" REL="stylesheet"
+	TYPE="text/css" media="screen">
+<LINK href="css/bootstrap.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+<LINK href="css/bootstrap-responsive.css" REL="stylesheet"
+	TYPE="text/css" media="screen">
+<LINK href="css/homestyle.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Register User</title>
+</head>
+<body>
+	
+
+
+<h1>News Stream Login</h1>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript">
+	
+		function tryRegister(){
+			var xmlhttp;
+			var user = document.getElementById("userName").value;
+			var pass = document.getElementById("userName").value;
+			
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					document.getElementById("url").innerHTML = xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET", "setNewUser.jsp?user="+user+"&pass="+pass, true);
+			xmlhttp.send();
+			
+			
+		}
+	
+	</script>
+	<div id="loginBox" class="tts-form">
+		<label>User Name</label><input id="userName"></input> <label>Password</label><input
+			id="password"></input>
+			<button id= "login"  class="btn btn-primary" onclick="tryRegister()">Login</button>
+	</div>
+
+	</div>
+</body>
+</html>

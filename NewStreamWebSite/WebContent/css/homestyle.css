@@ -12,8 +12,8 @@ h1 {
 	font-family: Helvetica, Arial, Times New Roman;
 	background-color: white;
 	text-align: center;
-	color: #0000FF; /*dark bright blue color*/
-	border: 5pt solid black;
+	color: black; /*dark bright blue color*/
+	border: 2pt groove  #e5e5e5;
 	padding: 30px;
 
 }
@@ -175,7 +175,7 @@ a:active {
 }
 /* styles the table hoover class*/
 .table-hoover, th, td{
-	border: 5px solid black;
+	border: 2px solid black;
 	width : 200px;
 	background-color: #C0C0C0; /* light gray color */
 }
@@ -203,9 +203,8 @@ a:active {
 	margin: 15px ;
 	width: 10%;
 	padding: 20px 20px 20px 20px;
-	background-image: url('img/wall4_@2X.png');
 	background-color: white;
-	border: 5px solid black;
+	border: 3px groove black;
 	text-align: center;
 }
 
@@ -256,31 +255,7 @@ a:active {
 
 }
 
-/* styles the login button */
-#login{
-	position: fixed;
-	left: 10px;
-	background-color:  #0000FF; /* dark bright blue */
-	color: white;
-	background: -webkit-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); /*dark bright blue to light gray*/
-	background: -mox-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
-	background: -o-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
-	-webkit-box-shadow: -2px -2px 2px rgb(88, 88, 180);    /*(horizontal offset, veritcal offset, optional blur distance, optional spread distance, color) rgb is grayish blue */
-	-moz-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
-	-o-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
-	border-radius: 8px;
 
-}
-
-#login:hover{
-	color: #0000FF; /* dark bright blue */;
-	background: #E8E8E8; /* light gray */
-	border-top-color: white;
-	border-bottom-color: white;
-	border-left-color: white;
-	border-right-color: white;
-
-}
 
 .tts-form {
 	max-width: 500px;

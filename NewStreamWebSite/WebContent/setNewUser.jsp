@@ -4,26 +4,30 @@
 <%@ page import="java.io.*"  %> 
 
 <%
-//@author Lance Staley
 String connectionURL = "jdbc:mysql://streamsdatabase.ece.iastate.edu/mydb?user=root;password=";
 Connection connection = null;
-Statement statement = null;
+PreparedStatement statement = null;
 ResultSet rs = null;
+String user = "0";
+String password = "0";
 %>
 
 
-<html><body>
+<html>
+<body>
+
 
 
 <%
+user = request.getParameter("User_Name");
+password = request.getParameter("userpassword");
 Class.forName("com.mysql.jdbc.Driver");
 connection = DriverManager.getConnection(connectionURL, "root", "");
-statement = connection.createStatement();
-rs = statement.executeQuery("SELECT title FROM story WHERE Story_ID =2");
+statement = connection.prepareStatement("INSERT INTO user(User_Name, Source_Exceptions, userpassword) VALUES(?, null, ?)");
+statement.setString(1, user);
+statement.setString(2, password);
+rs = statement.executeQuery();
 
-while (rs.next()) {
-out.println(rs.getString("title")+"<br>");
-}
 
 rs.close();
 %>
