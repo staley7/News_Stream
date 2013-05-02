@@ -22,10 +22,9 @@ statement = connection.createStatement();
 rs = statement.executeQuery("SELECT url FROM article where Story_ID = 1 ");
 
 while (rs.next()) {
-//out.println(rs.getString("url")+"<br>");
-out.println("<a href ="+rs.getString("url")+"><br></br>"+rs.getString("url")+"</a>");
-//response.write("<tr><td><b>" & x.name & "</b></td>")
- //   response.write("<td>" & x.value & "</td></tr>")
+out.println("<a href ="+rs.getString("url")+">"+rs.getString("url")+"</a>");
+//out.println("<a href ="+rs.getString("url")+"><br></br>"+rs.getString("url")+"</a>");
+
 }
 
 rs.close();

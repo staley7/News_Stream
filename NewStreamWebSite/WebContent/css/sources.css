@@ -19,20 +19,12 @@ body {
 
 }
 
-/* /* styling for the remove box */ */
-/* #remove-box { */
-/* 	font-family: Helvetica, Arial, Times New Roman; */
-/* 	background-color: white; light grayish brown */
-/* 	margin: 5px; */
-/* 	padding: 20px; */
-/* 	border: 5px solid black; */
-/* 	position: fixed; */
-/* 	top: 200px; */
-/* 	left: 400px; */
-/* 	width: 50%; */
-	
-	
-/* } */
+
+/*styles the nav panel */
+.n{
+	position: fixed;
+	top: 32px;
+}
 
 /* styling the source group of buttons in the remove box */
 #inside-remove-box{
@@ -72,37 +64,8 @@ body {
 	
 }
 
-#header-image{
-	position:fixed;
-	left: 650px;
-	top: 20px;
-}
-
-#home{
-	position: fixed;
-	left: 10px;
-	background-color:  #0000FF; /* dark bright blue */
-	color: white;
-	background: -webkit-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); /*dark bright blue to light gray*/
-	background: -mox-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
-	background: -o-linear-gradient(top, #0000FF,  #0066CC, #C0C0C0); 
-	-webkit-box-shadow: -2px -2px 2px rgb(88, 88, 180);    /*(horizontal offset, veritcal offset, optional blur distance, optional spread distance, color) rgb is grayish blue */
-	-moz-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
-	-o-box-shadow: -2px -2px 2px rgb(88, 88, 180); 
-	border-radius: 8px;
 
 
-
-}
-#home:hover{
-	color: white;
-	background: #0000FF; /* dark bright blue */
-	border-top-color: white;
-	border-bottom-color: white;
-	border-left-color: white;
-	border-right-color: white;
-
-}
 
 
 .tts-form {
@@ -117,5 +80,6 @@ body {
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	margin-bottom: 10px;
 }
 
