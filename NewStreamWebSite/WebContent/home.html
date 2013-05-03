@@ -30,40 +30,6 @@
 	<script src="js/bootstrap-dropdown.js"></script>
 	<script type="text/javascript">
 
-	var count = 5;
-		function retrieveArticleURL() {
-			var xmlhttp;
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("url").innerHTML = xmlhttp.responseText;
-				}
-			}
-			xmlhttp.open("GET", "retrieveArticleUrl.jsp", true);
-			xmlhttp.send();
-
-		}
-
-		function retrieveStory() {
-			var xmlhttp;
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("title-1").innerHTML = xmlhttp.responseText;
-				}
-			}
-			xmlhttp.open("GET", "retrieveStory.jsp", true);
-			xmlhttp.send();
-		}
-
 
 		function retrieveStoryTitlebyID(id) {
 			var xmlhttp;
@@ -75,15 +41,14 @@
 			}
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("title-"+id).innerHTML = xmlhttp.responseText;
-					
+					document.getElementById("title-" + id).innerHTML = xmlhttp.responseText;
+
 				}
 			}
 			xmlhttp.open("GET", "retrieveStoryTitlebyID.jsp?Story_ID= "
 					+ Story_ID, true);
 			xmlhttp.send();
 		}
-
 
 		function retrieveArticleURLbyID(id) {
 			var xmlhttp;
@@ -106,9 +71,8 @@
 		}
 
 		//popolutes the story url on next click
-		function retArticleURLbyID(counter, id ) {
+		function retArticleURLbyID(counter, id) {
 			var xmlhttp;
-			alert("ARtice")
 			var Story_ID = counter;
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
@@ -117,11 +81,9 @@
 			}
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					alert("here");
 					document.getElementById("url" + id).innerHTML = xmlhttp.responseText;
 				}
 			}
-			alert("end art");
 			xmlhttp.open("GET", "retrieveArticleUrlbyID.jsp?Story_ID= "
 					+ Story_ID, true);
 			xmlhttp.send();
@@ -130,7 +92,6 @@
 
 		function retStoryTitlebyID(counter, id) {
 			var xmlhttp;
-			alert("story Title");
 			var Story_ID = counter;
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
@@ -139,44 +100,163 @@
 			}
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("title-"+id).innerHTML = xmlhttp.responseText;
+					document.getElementById("title-" + id).innerHTML = xmlhttp.responseText;
 				}
 			}
-			alert("end Story Title");
 			xmlhttp.open("GET", "retrieveStoryTitlebyID.jsp?Story_ID= "
 					+ Story_ID, true);
 			xmlhttp.send();
 		}
 
-
 		//calls the function to populate main feed on next button
-		function next(){
-			count=count+5;
-			//retStoryTitlebyID(count-4, 1);
-			retArticleURLbyID(count-4, 1);
-// 			retStoryTitlebyID(count-3, 2);
-// 			retArticleURLbyID(count-3, 2);
-//  			retStoryTitlebyID(count-2, 2);
-// 			retArticleURLbyID(count-2, 3);
-//  			retStoryTitlebyID(count-1, 4);
-// 			retArticleURLbyID(count-1, 4);
-// 			retStoryTitlebyID(count, 5);
-// 			retArticleURLbyID(count, 5);
+		function next() {
+			var n = getCookie("ids");
+			var x = parseInt(n) + parseInt(5);
+			cookie(x);
+			var max = getCookie("max");
+			var count = getCookie("ids");
+			if (parseInt(count) > parseInt(max)) {
+				alert("No newer articles at this time");
+				var x = parseInt(n) - parseInt(5);
+				cookie(x);
+			} else {
+				retStoryTitlebyID(count, 1);
+				retArticleURLbyID(count, 1);
+				retStoryTitlebyID(count - 1, 2);
+				retArticleURLbyID(count - 1, 2);
+				retStoryTitlebyID(count - 2, 3);
+				retArticleURLbyID(count - 2, 3);
+				retStoryTitlebyID(count - 3, 4);
+				retArticleURLbyID(count - 3, 4);
+				retStoryTitlebyID(count - 4, 5);
+				retArticleURLbyID(count - 4, 5);
+			}
+		}
+		
+		//populates the older functions
+		function previous(){
+			var n = getCookie("ids");
+			var x = parseInt(n) - parseInt(5);
+			cookie(x);
+			var max = getCookie("max");
+			var count = getCookie("ids");
+			if (parseInt(count) > parseInt(max)) {
+				alert("No older articles at this time");
+				var x = parseInt(n) + parseInt(5);
+				cookie(x);
+			} else {
+				retStoryTitlebyID(count - 4, 1);
+				retArticleURLbyID(count - 4, 1);
+				retStoryTitlebyID(count - 3, 2);
+				retArticleURLbyID(count - 3, 2);
+				retStoryTitlebyID(count - 2, 3);
+				retArticleURLbyID(count - 2, 3);
+				retStoryTitlebyID(count - 1, 4);
+				retArticleURLbyID(count - 1, 4);
+				retStoryTitlebyID(count, 5);
+				retArticleURLbyID(count, 5);
+			}
+			
+		}
+		
+
+		//returns the newest stories id and sets the count value to it
+		function getNewStoryID() {
+			var xmlhttp;
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var response = parseInt(xmlhttp.responseText);
+					cookie(response);
+					maxCookie(response);
+				}
+			}
+			xmlhttp.open("GET", "retrieveLastStoryDate.jsp", true);
+			xmlhttp.send();
 		}
 
+		//makes article based on recent news
+		function RecentNews() {
+			alert("clicked");
+			//nextCat("Other");
+		}
 
+		//makes articles based on world news
+		function WorldNews() {
+			alert("world");
+			// 			nextCat("World News");
+		}
 
+		//makes the articles based on tech news
+		function techNews() {
+			alert("tech");
+			// 			nextCat("Technology");
+		}
+
+		//makes the rows clickable in the tables usign JQuery
+		function makeTableRowClickable() {
+			$("#recent").click(function() {
+				//RecentNews();
+			});
+			$("#tech").click(function() {
+				//techNews();
+			});
+			$("#world").click(function() {
+				//WorldNews();
+			});
+		}
+		
+		
+		//makes a cookie for story ids
+		function cookie(value) {
+			document.cookie = "ids=" + value;
+		}
+
+		//makes a cookie for story ids
+		function maxCookie(value) {
+			document.cookie = "max=" + value;
+		}
+
+		//returns a cookies
+		//author http://www.w3schools.com/js/js_cookies.asp
+		function getCookie(c_name) {
+			var c_value = document.cookie;
+			var c_start = c_value.indexOf(" " + c_name + "=");
+			if (c_start == -1) {
+				c_start = c_value.indexOf(c_name + "=");
+			}
+			if (c_start == -1) {
+				c_value = null;
+			} else {
+				c_start = c_value.indexOf("=", c_start) + 1;
+				var c_end = c_value.indexOf(";", c_start);
+				if (c_end == -1) {
+					c_end = c_value.length;
+				}
+				c_value = unescape(c_value.substring(c_start, c_end));
+			}
+			return c_value;
+		}
+
+		//function which populates the feed on page load
 		function startOnLoad() {
-			retrieveArticleURL();
-			retrieveStory();
- 			retrieveStoryTitlebyID(2);
-			retrieveArticleURLbyID(2);
- 			retrieveStoryTitlebyID(3);
-			retrieveArticleURLbyID(3);
- 			retrieveStoryTitlebyID(4);
-			retrieveArticleURLbyID(4);
-			retrieveStoryTitlebyID(5);
-			retrieveArticleURLbyID(5);
+			getNewStoryID();
+			var count = getCookie("ids");
+			retStoryTitlebyID(count, 1);
+			retArticleURLbyID(count, 1);
+			retStoryTitlebyID(count - 1, 2);
+			retArticleURLbyID(count - 1, 2);
+			retStoryTitlebyID(count - 2, 3);
+			retArticleURLbyID(count - 2, 3);
+			retStoryTitlebyID(count - 3, 4);
+			retArticleURLbyID(count - 3, 4);
+			retStoryTitlebyID(count - 4, 5);
+			retArticleURLbyID(count - 4, 5);
+			makeTableRowClickable();
 
 		}
 		window.onload = startOnLoad;
@@ -185,47 +265,47 @@
 
 
 	<div id="n" class="navbar">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="login.html">Login</a>
-                    <a class="brand" href="register.html">Register</a>
-                    <a class="brand" href="sources.html">Sources</a>
-                </div>
-            </div>
-        </div>
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar collapsed"
+					data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand" href="login.html">Login</a> <a class="brand"
+					href="register.html">Register</a> <a class="brand"
+					href="sources.html">Sources</a>
+			</div>
+		</div>
+	</div>
 
 
 
 
 	<div id="mainfeed" class="tts-form">
-		<div id="story-1" >
+		<div id="story-1">
 			<p id=title-1 class="title"></p>
-			<div id="url" class ="url"></div>
+			<div id="url1" class="url"></div>
 
 		</div>
 		<div id="story-2" class="story">
 			<p id=title-2 class="title"></p>
-			<div id="url2" class ="url"></div>
+			<div id="url2" class="url"></div>
 		</div>
 		<div id="story-3" class="story">
 			<p id=title-3 class="title"></p>
-			<div id="url3" class ="url"></div>
+			<div id="url3" class="url"></div>
 		</div>
 		<div id="story-4" class="story">
 			<p id=title-4 class="title"></p>
-			<div id="url4" class ="url"></div>
+			<div id="url4" class="url"></div>
 		</div>
 		<div id="story-5" class="story">
 			<p id=title-5 class="title"></p>
-			<div id="url5" class ="url"></div>
+			<div id="url5" class="url"></div>
 		</div>
-		<button id = "previous" class="btn btn-primary">Previous</button>
-		<button id = "next" class="btn btn-primary" onclick="next()">Next</button>
+		<button id="previous" class="btn btn-primary" onclick = "previous()">Previous</button>
+		<button id="next" class="btn btn-primary" onclick="next()">Next</button>
 	</div>
 
 
@@ -234,13 +314,13 @@
 		<div id="table-header">Categories</div>
 		<table id="table1" class="table-hover">
 			<tr>
-				<td>Recent News</td>
+				<td id = "recent">Recent News</td>
 			</tr>
 			<tr>
-				<td>World News</td>
+				<td id = "world">World News</td>
 			</tr>
 			<tr>
-				<td>Technology</td>
+				<td id = "tech">Technology</td>
 			</tr>
 
 		</table>
