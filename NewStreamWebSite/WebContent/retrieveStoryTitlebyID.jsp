@@ -11,7 +11,6 @@ Statement statement = null;
 ResultSet rs = null;
 %>
 
-<html><body>
 
 
 <%

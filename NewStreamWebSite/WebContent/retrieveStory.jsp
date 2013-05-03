@@ -12,14 +12,13 @@ ResultSet rs = null;
 %>
 
 
-<html><body>
 
 
 <%
 Class.forName("com.mysql.jdbc.Driver");
 connection = DriverManager.getConnection(connectionURL, "root", "");
 statement = connection.createStatement();
-rs = statement.executeQuery("SELECT title FROM story WHERE Story_ID =2");
+rs = statement.executeQuery("SELECT title FROM story WHERE Story_ID =1");
 
 while (rs.next()) {
 out.println(rs.getString("title")+"<br>");

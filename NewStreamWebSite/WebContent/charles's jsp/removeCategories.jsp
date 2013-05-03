@@ -39,14 +39,14 @@ while(i< original.length){
 	}
 	i++;
 }
-statement = connection.prepareStatement("UPDATE user SET Source_Exceptions = ? WHERE User_Name = ?");
-statement.setArray(1, connection.createArrayOf("String", excepts));
-statement.setString(2, input);
+statement = connection.prepareStatement("UPDATE user SET Source_Exceptions = '"+ excepts +"' WHERE User_Name = ?");
+//statement.setArray(1, excepts);
+statement.setString(1, input);
 if(contains){
 	out.println("The source was removed" + "<br>");
 }else{
 	out.println("The user has no such source exemption" + "<br>");
 }
-
+statement.executeUpdate();
 rs.close();
 %>

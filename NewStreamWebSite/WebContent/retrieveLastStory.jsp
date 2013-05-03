@@ -4,6 +4,7 @@
 <%@ page import="java.io.*"  %> 
 
 <%
+//author Charles Litfin, modified by Lance Staley
 String connectionURL = "jdbc:mysql://streamsdatabase.ece.iastate.edu/mydb?user=root;password=";
 Connection connection = null;
 PreparedStatement statement = null;
@@ -11,7 +12,6 @@ ResultSet rs = null;
 %>
 
 
-<html><body>
 
 
 <%

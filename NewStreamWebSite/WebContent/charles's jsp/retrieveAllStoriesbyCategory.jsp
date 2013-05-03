@@ -9,18 +9,21 @@
 	Connection connection = null;
 	PreparedStatement statement = null;
 	ResultSet rs = null;
+	String inputCategory = "0";
 %>
 
 
 	<%
+		inputCategory = request.getParameter("Category");
 		Class.forName("com.mysql.jdbc.Driver");
 		connection = DriverManager.getConnection(connectionURL, "root", "");
 		statement = connection
-				.prepareStatement("SELECT Story_ID FROM story ORDER BY Date DESC LIMIT 1");
+				.prepareStatement("SELECT Title FROM story WHERE Category =?");
+		statement.setString(1, inputCategory);
 		rs = statement.executeQuery();
 
 		while (rs.next()) {
-			out.println(rs.getInt("Story_ID") );
+			out.println(rs.getString("Title")+":&split*^");
 		}
 
 		rs.close();

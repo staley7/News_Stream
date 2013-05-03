@@ -1,5 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<meta name="author" content="Lance Staley">
+
 <head>
 <!--  bootstrap css links -->
 <LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
@@ -17,21 +19,22 @@
 <title>Login</title>
 </head>
 <body>
-	
 
 
-<h1>News Stream Login</h1>
+
+	<h1>News Stream Login</h1>
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-dropdown.js"></script>
+
 	<script type="text/javascript">
-	
-		function tryLogin(){
+		//checks to see if password and user names matches
+		function tryLogin() {
 			var xmlhttp;
-			var user = document.getElementById("userName").value;
-			var pass = document.getElementById("userName").value;
-			
+			var User_Name = document.getElementById("userName").value;
+			var userpassword = document.getElementById("password").value;
+
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
 			} else {// code for IE6, IE5
@@ -39,38 +42,48 @@
 			}
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("url").innerHTML = xmlhttp.responseText;
+					var login = xmlhttp.responseText;
+					if (login.search("true") != -1) {
+						alert("Login was Successfull");
+						cookie(User_Name);
+					} else {
+						alert("Login Failed. Check user name and password! Also make sure you're registered!");
+					}
 				}
 			}
-			xmlhttp.open("GET", "setNewUser.jsp?user="+user+"&pass="+pass, true);
+			xmlhttp.open("GET", "checkPassword.jsp?User_Name=" + User_Name
+					+ "&userpassword=" + userpassword, true);
 			xmlhttp.send();
-			
-			
 		}
-	
+
+		function cookie(value) {
+			document.cookie = "name=" + value;
+		}
+
+		
 	</script>
-	
+
+	<!-- navagiation panel with links to other pages -->
 	<div id="n" class="navbar">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="home.html">News Streams</a>
-                    <a class="brand" href="register.html">Register</a>
-                    <a class="brand" href="sources.html">Sources</a>
-                </div>
-            </div>
-        </div>
-	
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar collapsed">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand" href="home.html">News Streams</a> <a class="brand"
+					href="register.html">Register</a> <a class="brand"
+					href="sources.html">Sources</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- div which contains the login fields -->
 	<div id="loginBox" class="tts-form">
 		<label>User Name</label><input id="userName"></input> <label>Password</label><input
 			id="password"></input>
-			<button id= "login"  class="btn btn-primary" onclick="tryLogin()">Login</button>
+		<button id="login" class="btn btn-primary" onclick="tryLogin()">Login</button>
 	</div>
 
-	</div>
 </body>
 </html>

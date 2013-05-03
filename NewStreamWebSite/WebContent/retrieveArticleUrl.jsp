@@ -12,9 +12,6 @@ ResultSet rs = null;
 %>
 
 
-<html><body>
-
-
 <%
 Class.forName("com.mysql.jdbc.Driver");
 connection = DriverManager.getConnection(connectionURL, "root", "");

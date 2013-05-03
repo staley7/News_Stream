@@ -1,41 +1,3 @@
-<!DOCTYPE html>
-<!--index html main page for the website interface -->
-<html>
-<head>
-<meta name="author" content="Lance Staley">
-<!--  bootstrap css links -->
-<LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
-	media="screen">
-<LINK href="css/bootstrap-responsive.min.css" REL="stylesheet"
-	TYPE="text/css" media="screen">
-<LINK href="css/bootstrap.css" REL="stylesheet" TYPE="text/css"
-	media="screen">
-<LINK href="css/bootstrap-responsive.css" REL="stylesheet"
-	TYPE="text/css" media="screen">
-<LINK href="css/homestyle.css" REL="stylesheet" TYPE="text/css"
-	media="screen">
-
-
-
-
-<title>News Stream</title>
-</head>
-
-<!--News Stream header -->
-<h1>News Stream</h1>
-
-<body>
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-dropdown.js"></script>
-	<script src="js/home.js"></script>
-	<script type="text/javascript">
-	
-	//gobal variable to keep track of what range of articles should be currently displayed
-	var count = 5;
-	var cat = 0; //0 recent, 1 world, 2 tech
-	var splitter = ":&split*^";
 
 		//returns the newest stories id and sets the count value to it
 		function getNewStoryID(){	
@@ -170,29 +132,7 @@
 			xmlhttp.send();
 		}
 		
-		//get the next articles of a certain category only
-		function nextCat(iCategory){
-			var Category = iCategory;
-			var xmlhttp;
-			var Story_ID = counter;
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					
-					var responsev= xmlhttp.responseText;
-					var array = new Array();
-					array = response.split(splitter);
-					alert(array);
-				}
-			}
-			xmlhttp.open("GET", "retrieveAllStoryTitlebyID.jsp?Category= "
-					+ Category, true);
-			xmlhttp.send();	
-		}
+		
 		
 		
 		//calls the function to populate main feed on next button
@@ -245,24 +185,22 @@
 			retrieveArticleURLbyID(count-3);
 			retrieveStoryTitlebyID(count-4);
 			retrieveArticleURLbyID(count-4);
+
 		}
 		
 		//makes articles be based on recent news
 		function RecentNews(){
 			alert("clicked");
-			nextCat("Other");
 		}
 		
 		//makes articles based on world news
 		function WorldNews(){
 			alert("world");
-			nextCat("World News");
 		}
 		
 		//makes the articles based on tech news
 		function techNews(){
 			alert("tech");
-			nextCat("Technology");
 		}
 		
 		//makes the rows clickable in the tables usign JQuery
@@ -278,74 +216,5 @@
 				 });
 		}
 		
-		
-		
 		//tell page to run function on window load
 		window.onload = startOnLoad;
-	</script>
-
-
-	<!-- navagiation panel with links to other pages -->
-	<div id="n" class="navbar">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="login.html">Login</a>
-                    <a class="brand" href="register.html">Register</a>
-                    <a class="brand" href="sources.html">Sources</a>
-                </div>
-            </div>
-        </div>
-
-
-
-	<!-- div which contains the feed for the all the story information -->
-	<div id="mainfeed" class="tts-form">
-		<div id="story-1" >
-			<p id=title-1 class="title"></p>
-			<div id="url" class ="url"></div>
-
-		</div>
-		<div id="story-2" class="story">
-			<p id=title-2 class="title"></p>
-			<div id="url2" class ="url"></div>
-		</div>
-		<div id="story-3" class="story">
-			<p id=title-3 class="title"></p>
-			<div id="url3" class ="url"></div>
-		</div>
-		<div id="story-4" class="story">
-			<p id=title-4 class="title"></p>
-			<div id="url4" class ="url"></div>
-		</div>
-		<div id="story-5" class="story">
-			<p id=title-5 class="title"></p>
-			<div id="url5" class ="url"></div>
-		</div>
-		<button id = "previous" class="btn btn-primary" onclick = "previous()">Previous</button>
-		<button id = "next" class="btn btn-primary" onclick="next()">Next</button>
-	</div>
-
-
-	<!--category table and box -->
-	<div id="category">
-		<div id="table-header">Categories</div>
-		<table id="table1" class="table-hover">
-			<tr>
-				<td id="recent">Recent News</td>
-			</tr>
-			<tr>
-				<td id="world">World News</td>
-			</tr>
-			<tr>
-				<td id="tech">Technology</td>
-			</tr>
-
-		</table>
-	</div>
-</body>
-</html>

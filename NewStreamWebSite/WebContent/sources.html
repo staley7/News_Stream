@@ -1,61 +1,106 @@
 <!DOCTYPE html>
 <html>
-	<LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css" media="screen">
-	<LINK REL=StyleSheet HREF="css/sources.css" TYPE="text/css" MEDIA=screen>
-	
-	<title>News Streams Sources</title>
+<meta name="author" content="Lance Staley">
+<LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
+	media="screen">
+<LINK REL=StyleSheet HREF="css/sources.css" TYPE="text/css" MEDIA=screen>
 
-	<h1>News Streams Sources</h1> 
-	
-	<body>
-	
+<title>News Streams Sources</title>
+
+<h1>News Streams Sources</h1>
+
+<body>
+
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript">
-		function retrieveSources(){
+	
+	//var static splitter = ":&split*^";
+	var  splitter = ":&split*^";
+	
+		//function which retrieves users selected sources
+		function retrieveSources() {
+			var xmlhttp;
+			var Name = document.cookie
 			
-		}
-	
-	</script>
-	
-	<div id="n" class="navbar">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="home.html">News Streams</a>
-                    <a class="brand" href="login.html">Login</a>
-                    <a class="brand" href="register.html">Register</a>
-                    
-                </div>
-            </div>
-        </div>
-	
-		<div id = "remove-box" class = "tts-form">
-			
-				  <div id = "sources"  div class="btn-toolbar" data-toggle="buttons-checkbox"> -->
-					<button type = "button" class = "btn btn-primary"> CNN </button>
-					<button type = "button" class = "btn btn-primary">BBC </button>
-					<button type = "button" class = "btn btn-primary"> The Guardian</button>
-				 </div>	
-				<!--  <div id = "source-2" div class="btn-toolbar" data-toggle="buttons-checkbox">-->
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var sources = xmlhttp.responseText;
+					var array = new Array();
+					array = sources.split(splitter);
+					if(array.lenght==1){
+						alert("yep");
+					}else{
+						alert("nope");
+					}
 					
-				<!-- <button type = "button" class = "btn btn-primary"> Source 4 </button>
-				</div>
-				<div id = "source-3" div class="btn-toolbar" data-toggle="buttons-checkbox">
-					<button type = "button" class = "btn btn-primary"> Source 5 </button>
-					<button type = "button" class = "btn btn-primary"> Source 6 </button>
-				</div> -->
-				
-			<button type = "button" button id = "remove-button">
-				Remove Selected
-			</button>
-		</div>
+				}
+			}
+			if (User_Name != null) {
+				xmlhttp.open("GET", "retrieveUserCategories.jsp?User_Name= "
+						+ User_Name, true);
+				xmlhttp.send();
+			}
+		}
+
 		
+		
+		
+		//returns the a cookies
+		//author http://www.w3schools.com/js/js_cookies.asp
+		function getCookie(c_name) {
+			var c_value = document.cookie;
+			var c_start = c_value.indexOf(" " + c_name + "=");
+			if (c_start == -1) {
+				c_start = c_value.indexOf(c_name + "=");
+			}
+			if (c_start == -1) {
+				c_value = null;
+			} else {
+				c_start = c_value.indexOf("=", c_start) + 1;
+				var c_end = c_value.indexOf(";", c_start);
+				if (c_end == -1) {
+					c_end = c_value.length;
+				}
+				c_value = unescape(c_value.substring(c_start, c_end));
+			}
+			return c_value;
+		}
+
+		window.onload = retrieveSources();
+	</script>
 
 
+	<!-- navagiation div for the links to other pages -->
+	<div id="n" class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<button type="button" class="btn btn-navbar collapsed"
+					data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand" href="home.html">News Streams</a> <a class="brand"
+					href="login.html">Login</a> <a class="brand" href="register.html">Register</a>
 
+			</div>
+		</div>
+	</div>
+
+	<!--  div which contains information for toggling sources -->
+	<div id="remove-box" class="tts-form">
+
+		<div id="sources" class="btn-toolbar" data-toggle="buttons-checkbox">
+			<button type="button" id = "one" class="btn btn-primary">CNN</button>
+			<button type="button" class="btn btn-primary">BBC</button>
+			<button type="button" class="btn btn-primary">The Guardian</button>
+		</div>
+
+		<button type="button" id="remove-button">Update Sources</button>
+	</div>
 </html>

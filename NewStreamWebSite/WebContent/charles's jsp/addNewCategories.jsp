@@ -42,14 +42,14 @@ while(i< original.length){
 if(!contains){
 	excepts[i] = newSource;
 }
-statement = connection.prepareStatement("UPDATE user SET Source_Exceptions = ? WHERE User_Name = ?");
-statement.setArray(1, connection.createArrayOf("String", excepts));
-statement.setString(2, input);
+statement = connection.prepareStatement("UPDATE user SET Source_Exceptions = '"+ excepts +"' WHERE User_Name = ?");
+//statement.setArray(1, excepts);
+statement.setString(1, input);
 if(contains){
 	out.println("The source was already present in the list" + "<br>");
 }else{
 	out.println("The source was added to the exceptions list" + "<br>");
 }
-
+statement.executeUpdate();
 rs.close();
 %>

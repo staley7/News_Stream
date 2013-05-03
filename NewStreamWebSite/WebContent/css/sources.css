@@ -1,4 +1,5 @@
 /* css stylesheet for sources.html */
+/* author Lance Staley */
 
 /*styles the header*/
 h1 {
@@ -26,25 +27,19 @@ body {
 	top: 32px;
 }
 
-/* styling the source group of buttons in the remove box */
-#inside-remove-box{
-	background-color: #C0C0C0; /*light gray color*/
-	border: 4px solid black;
-	padding: 10px;
-
-}
 
 #sources{
-	position: relateive;
-	top: 10px;
-	left: 40%;
-	padding-left: 600px;
+	position: relative;
 	padding: 10px;
+	text-align: center;
 	
 }
 
 
-/* styles the remove slected button in the remove-box*/
+
+
+
+/* styles the remove selected button in the remove-box*/
 #remove-button{
 	padding: 4px;
 	position: relative;
@@ -53,7 +48,6 @@ body {
 	background-color: red;
 	color: white;
 	border-radius: 10px;
-	/*border: 1px solid black;*/
 
 
 }
@@ -65,9 +59,7 @@ body {
 }
 
 
-
-
-
+/* styles the main box area */
 .tts-form {
 	max-width: 500px;
 	padding: 19px 29px 29px;

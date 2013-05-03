@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<meta name="author" content="Lance Staley">
 <head>
 <!--  bootstrap css links -->
 <LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
@@ -27,10 +28,12 @@
 	<script src="js/bootstrap-dropdown.js"></script>
 	<script type="text/javascript">
 	
+	
+		//try to register the new user
 		function tryRegister(){
 			var xmlhttp;
-			var user = document.getElementById("userName").value;
-			var pass = document.getElementById("userName").value;
+			var User_Name = document.getElementById("userName").value;
+			var userpassword = document.getElementById("password").value;
 			
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
@@ -39,10 +42,16 @@
 			}
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					document.getElementById("url").innerHTML = xmlhttp.responseText;
+					var success=0;
+					success = parseInt(xmlhttp.responseText);
+					if(success == 1){
+						alert("Register was successful");
+					}else{
+						alert("Something went wrong. Please try to register again");
+					}
 				}
 			}
-			xmlhttp.open("GET", "setNewUser.jsp?user="+user+"&pass="+pass, true);
+			xmlhttp.open("GET", "setNewUser.jsp?User_Name="+User_Name+"&userpassword="+userpassword, true);
 			xmlhttp.send();
 			
 			
@@ -50,6 +59,7 @@
 	
 	</script>
 	
+	<!-- navagiation panel with links to other pages -->
 	<div id="n" class="navbar">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -65,12 +75,12 @@
             </div>
         </div>
 	
+	<!-- div with login information fields in it. -->
 	<div id="loginBox" class="tts-form">
 		<label>User Name</label><input id="userName"></input> <label>Password</label><input
 			id="password"></input>
-			<button id= "login"  class="btn btn-primary" onclick="tryRegister()">Login</button>
+			<button id= "login"  class="btn btn-primary" onclick="tryRegister()">Register</button>
 	</div>
 
-	</div>
 </body>
 </html>
