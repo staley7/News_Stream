@@ -2,7 +2,6 @@
 <!--index html main page for the website interface -->
 <html>
 <head>
-<meta name="author" content="Lance Staley">
 <!--  bootstrap css links -->
 <LINK href="css/bootstrap.min.css" REL="stylesheet" TYPE="text/css"
 	media="screen">
@@ -29,35 +28,9 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-dropdown.js"></script>
-	<script src="js/home.js"></script>
 	<script type="text/javascript">
-	
-	//gobal variable to keep track of what range of articles should be currently displayed
-	var count = 5;
-	var cat = 0; //0 recent, 1 world, 2 tech
-	var splitter = ":&split*^";
 
-		//returns the newest stories id and sets the count value to it
-		function getNewStoryID(){	
-			var xmlhttp;
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					//count = xmlhttp.responseText;
-					count = parseInt(xmlhttp.responseText);
-				}
-			}
-			xmlhttp.open("GET", "retrieveLastStoryDate.jsp", true);
-			xmlhttp.send();
-			
-		}
-	
-	
-		//populates the first article url on page load
+	var count = 5;
 		function retrieveArticleURL() {
 			var xmlhttp;
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -75,7 +48,6 @@
 
 		}
 
-		//populates first story title on page load
 		function retrieveStory() {
 			var xmlhttp;
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -92,7 +64,7 @@
 			xmlhttp.send();
 		}
 
-		//populates the story titels on page load
+
 		function retrieveStoryTitlebyID(id) {
 			var xmlhttp;
 			var Story_ID = id;
@@ -104,14 +76,15 @@
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					document.getElementById("title-"+id).innerHTML = xmlhttp.responseText;
+					
 				}
 			}
 			xmlhttp.open("GET", "retrieveStoryTitlebyID.jsp?Story_ID= "
 					+ Story_ID, true);
 			xmlhttp.send();
 		}
-		
-		//populates teh story url on page load
+
+
 		function retrieveArticleURLbyID(id) {
 			var xmlhttp;
 			var Story_ID = id;
@@ -123,6 +96,7 @@
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 					document.getElementById("url" + id).innerHTML = xmlhttp.responseText;
+					//alert(xmlhttp.responseText);
 				}
 			}
 			xmlhttp.open("GET", "retrieveArticleUrlbyID.jsp?Story_ID= "
@@ -130,10 +104,11 @@
 			xmlhttp.send();
 
 		}
-		
+
 		//popolutes the story url on next click
 		function retArticleURLbyID(counter, id ) {
 			var xmlhttp;
+			alert("ARtice")
 			var Story_ID = counter;
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
@@ -142,18 +117,20 @@
 			}
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					alert("here");
 					document.getElementById("url" + id).innerHTML = xmlhttp.responseText;
 				}
 			}
+			alert("end art");
 			xmlhttp.open("GET", "retrieveArticleUrlbyID.jsp?Story_ID= "
 					+ Story_ID, true);
 			xmlhttp.send();
 
 		}
-		
-		// retrieves story titles on next button click
+
 		function retStoryTitlebyID(counter, id) {
 			var xmlhttp;
+			alert("story Title");
 			var Story_ID = counter;
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
@@ -165,127 +142,48 @@
 					document.getElementById("title-"+id).innerHTML = xmlhttp.responseText;
 				}
 			}
+			alert("end Story Title");
 			xmlhttp.open("GET", "retrieveStoryTitlebyID.jsp?Story_ID= "
 					+ Story_ID, true);
 			xmlhttp.send();
 		}
-		
-		//get the next articles of a certain category only
-		function nextCat(iCategory){
-			var Category = iCategory;
-			var xmlhttp;
-			var Story_ID = counter;
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-					
-					var responsev= xmlhttp.responseText;
-					var array = new Array();
-					array = response.split(splitter);
-					alert(array);
-				}
-			}
-			xmlhttp.open("GET", "retrieveAllStoryTitlebyID.jsp?Category= "
-					+ Category, true);
-			xmlhttp.send();	
-		}
-		
-		
+
+
 		//calls the function to populate main feed on next button
 		function next(){
 			count=count+5;
-			retStoryTitlebyID(count, 5);
- 			retArticleURLbyID(count, 5);
- 			retStoryTitlebyID(count-1, 4);
- 			retArticleURLbyID(count-1, 4)
- 			retStoryTitlebyID(count-2, 3);
- 			retArticleURLbyID(count-2, 3);
- 			retStoryTitlebyID(count-3, 2);
-			retArticleURLbyID(count-3, 2);
-			retStoryTitlebyID(count-4, 1);
+			//retStoryTitlebyID(count-4, 1);
 			retArticleURLbyID(count-4, 1);
- 			
-  			
-  			;
- 		
+// 			retStoryTitlebyID(count-3, 2);
+// 			retArticleURLbyID(count-3, 2);
+//  			retStoryTitlebyID(count-2, 2);
+// 			retArticleURLbyID(count-2, 3);
+//  			retStoryTitlebyID(count-1, 4);
+// 			retArticleURLbyID(count-1, 4);
+// 			retStoryTitlebyID(count, 5);
+// 			retArticleURLbyID(count, 5);
 		}
-		
-		// function which loads new stories on previous button call
-		function previous(){
-			count=count-5;
-			retStoryTitlebyID(count+4, 1);
-			retArticleURLbyID(count+4, 1);
- 			retStoryTitlebyID(count+3, 2);
-			retArticleURLbyID(count+3, 2);
-  			retStoryTitlebyID(count+2, 2);
- 			retArticleURLbyID(count+2, 3);
-  			retStoryTitlebyID(count+1, 4);
- 			retArticleURLbyID(count+1, 4);
- 			retStoryTitlebyID(count, 5);
- 			retArticleURLbyID(count, 5);
-			
-			
-		}
-		
-		//onload function which makes javascript calls to populate the main feed
+
+
+
 		function startOnLoad() {
-			getNewStoryID();
-			makeTableRowClickable();
-			retrieveStoryTitlebyID(count);
-			retrieveArticleURLbyID(count);
- 			retrieveStoryTitlebyID(count-1);
-			retrieveArticleURLbyID(count-1);
- 			retrieveStoryTitlebyID(count-2);
-			retrieveArticleURLbyID(count-2);
- 			retrieveStoryTitlebyID(count-3);
-			retrieveArticleURLbyID(count-3);
-			retrieveStoryTitlebyID(count-4);
-			retrieveArticleURLbyID(count-4);
+			retrieveArticleURL();
+			retrieveStory();
+ 			retrieveStoryTitlebyID(2);
+			retrieveArticleURLbyID(2);
+ 			retrieveStoryTitlebyID(3);
+			retrieveArticleURLbyID(3);
+ 			retrieveStoryTitlebyID(4);
+			retrieveArticleURLbyID(4);
+			retrieveStoryTitlebyID(5);
+			retrieveArticleURLbyID(5);
+
 		}
-		
-		//makes articles be based on recent news
-		function RecentNews(){
-			alert("clicked");
-			nextCat("Other");
-		}
-		
-		//makes articles based on world news
-		function WorldNews(){
-			alert("world");
-			nextCat("World News");
-		}
-		
-		//makes the articles based on tech news
-		function techNews(){
-			alert("tech");
-			nextCat("Technology");
-		}
-		
-		//makes the rows clickable in the tables usign JQuery
-		function makeTableRowClickable(){
-			$("#recent").click(function(){
-			   RecentNews();
-			 });
-			$("#tech").click(function(){
-				   techNews();
-			});
-			$("#world").click(function(){
-				   WorldNews();
-				 });
-		}
-		
-		
-		
-		//tell page to run function on window load
 		window.onload = startOnLoad;
 	</script>
 
 
-	<!-- navagiation panel with links to other pages -->
+
 	<div id="n" class="navbar">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -303,7 +201,7 @@
 
 
 
-	<!-- div which contains the feed for the all the story information -->
+
 	<div id="mainfeed" class="tts-form">
 		<div id="story-1" >
 			<p id=title-1 class="title"></p>
@@ -326,7 +224,7 @@
 			<p id=title-5 class="title"></p>
 			<div id="url5" class ="url"></div>
 		</div>
-		<button id = "previous" class="btn btn-primary" onclick = "previous()">Previous</button>
+		<button id = "previous" class="btn btn-primary">Previous</button>
 		<button id = "next" class="btn btn-primary" onclick="next()">Next</button>
 	</div>
 
@@ -336,13 +234,13 @@
 		<div id="table-header">Categories</div>
 		<table id="table1" class="table-hover">
 			<tr>
-				<td id="recent">Recent News</td>
+				<td>Recent News</td>
 			</tr>
 			<tr>
-				<td id="world">World News</td>
+				<td>World News</td>
 			</tr>
 			<tr>
-				<td id="tech">Technology</td>
+				<td>Technology</td>
 			</tr>
 
 		</table>

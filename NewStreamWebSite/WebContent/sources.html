@@ -14,15 +14,16 @@
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript">
-	
-	//var static splitter = ":&split*^";
-	var  splitter = ":&split*^";
-	
+		//var static splitter = ":&split*^";
+		var splitter = ":&split*^";
 		//function which retrieves users selected sources
 		function retrieveSources() {
 			var xmlhttp;
-			var Name = document.cookie
-			
+			//var Name = document.cookie;
+			var User_Name = getCookie("name");
+			//alert(Name);
+			//alert(User_Name);
+
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
 			} else {// code for IE6, IE5
@@ -33,12 +34,25 @@
 					var sources = xmlhttp.responseText;
 					var array = new Array();
 					array = sources.split(splitter);
-					if(array.lenght==1){
-						alert("yep");
-					}else{
-						alert("nope");
+					//alert("Here");
+					if (array.length > 1) {
+						//	alert("yep");
+						//	alert(array);
+						for (i = 0; i < array.length; i++) {
+							if (array[i] == "The Guardian") {
+								//document.getElementById();
+								$("The Guardian").button('toggle');
+							} else if (array[i] == "BBC") {
+								$("BBC").button('toggle');
+							} else {
+								$("CNN").button('toggle');
+							}
+						}
+					} else {
+						//alert("nope");
+						//alert(array);
 					}
-					
+
 				}
 			}
 			if (User_Name != null) {
@@ -48,10 +62,61 @@
 			}
 		}
 
-		
-		
-		
-		//returns the a cookies
+		function updateSources() {
+			//alert("update");		
+			var xmlhttp;
+			var Source_Exceptions = " ";
+			var User_Name = getCookie("name");
+			var isCNN =0;
+			var isBBC = 0;
+			var isGuard=0;
+			var bbc="BBC"; cnn = "CNN"; guard="The Guardian";
+			alert(User_Name);
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+// 		alert($("#CNN").hasClass('active'));
+			if ($("#CNN").hasClass('active')) {
+				//	alert("in CNN");
+				//isCNN++;
+// 				Source_Exceptions = Source_Exceptions + "CNN" + " :&split*^ ";
+				Source_Exceptions = Source_Exceptions +"CNN ";
+
+			}
+			if ($("#BBC").hasClass('active')) {
+				//		alert("in BBC");
+				//Source_Exceptions = Source_Exceptions + "BBC " + " :&split*^ ";
+				Source_Exceptions = Source_Exceptions + "BBC ";
+				isBBC = 1;
+			}
+			if ($("#The Guardian").hasClass('active')) {
+				//		alert("in Guardian");
+// 				Source_Exceptions = Source_Exceptions + "The Guardin"
+// 						+ " :&split*^ ";
+				Source_Exceptions = Source_Exceptions + "The Guardin ";
+// 				isGuard=1;
+			}
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var success = parseInt(xmlhttp.responseText);
+					//var success = xmlhttp.responseText;
+					alert("success " + success) //TODO
+				}
+			}
+			if(isBBC==1)
+			alert("source " +Source_Exceptions +"user " + User_Name);
+			
+			xmlhttp.open("GET", "replaceSources.jsp?User_Name= " + User_Name
+					+ "&Source_Exceptions=" + Source_Exceptions, true);
+// 			xmlhttp.open("GET", "setSources.jsp?User_Name= " + User_Name
+// 					+ "&Source_Exceptions=" + Source_Exceptions, true);
+			xmlhttp.send();
+		}
+
+		//returns a cookies
 		//author http://www.w3schools.com/js/js_cookies.asp
 		function getCookie(c_name) {
 			var c_value = document.cookie;
@@ -96,11 +161,13 @@
 	<div id="remove-box" class="tts-form">
 
 		<div id="sources" class="btn-toolbar" data-toggle="buttons-checkbox">
-			<button type="button" id = "one" class="btn btn-primary">CNN</button>
-			<button type="button" class="btn btn-primary">BBC</button>
-			<button type="button" class="btn btn-primary">The Guardian</button>
+			<button type="button" id="CNN" name="CNN" class="btn btn-primary">CNN</button>
+			<button type="button" id="BBC" class="btn btn-primary">BBC</button>
+			<button type="button" id="The Guardian" class="btn btn-primary">The
+				Guardian</button>
 		</div>
 
-		<button type="button" id="remove-button">Update Sources</button>
+		<button type="button" id="remove-button" onclick="updateSources()">Update
+			Sources</button>
 	</div>
 </html>
